@@ -1,0 +1,77 @@
+Linux memo
+
+---Linuxコミュニティとオープンソースキャリヤ---
+
+・OSS(オープンソースソフトウェア)　デスクトップアプリケーション
+
+オフィススイート - LibreOffice,Apache OpenOffice
+Webプラウザ - Mozilla,Firefox
+電子メールクライアント - Thunderbird
+画像加工・編集 - GIMP(ラスター形式),Inkscape(ベクター形式)
+
+・OSS(オープンソースソフトウェア)　サーバーアプリケーション
+
+Webサーバー
+-Apache HTTP Server(アパッチ)
+-nginx(エンジンエックス)
+
+メールサーバー
+-Postfix(ポストフィックス)
+-Dovecot(ダヴコット)
+
+データベース
+-MySQL
+-MariaDB
+
+ファイル共有
+-NFS
+-Samba
+
+・ファイル形式・管理ツール
+Red Hat系
+ファイル形式 => .rpm
+管理ツール「 => rpm(低),yum(高),dnf
+
+Debian系
+ファイル形式 => .deb
+管理ツール => dpkg(低),apt-get(高)
+
+・オンラインストレージ
+ownCloud(オウンクラウド)
+NextCloud(ネクストクラウド)
+
+・フリーソフトウェア・オープンソースソフトウェアをまとめた呼称
+- FOSS(Free/Open Source Software)
+- FLOSS(Free/Libre and Open Source Software)
+
+・オープンソースを促進する非営利団体の名称
+- OSI(Open Source Initiative)
+
+・フリーソフトウェア財団の略称
+- FSF(Free Software Foundation,Inc.)
+
+・クリエイティブ・コモンズ・ライセンス
+- 意図にあった使用許可を資料車へ提示できるライセンス
+
+・コピーレフト
+- 著作物に対し複製や再配布・改変を制限しないこと
+
+・MITライセンス
+- 無償で誰でも利用可能であること
+- 作者・著作権者は責任を負わないこと
+
+・BSDライセンス
+- 無保証であること、著作権とライセンスの2点を明記すること
+
+・コピーレフト型
+- ソースコードは公開
+- ライセンス例 GPL(General Public License)
+- ソフトウエア Linux GNU系ソフトウェア
+
+・非コピーレフト型
+- ソースコードは公開不要
+- ライセンス例 BSDライセンス、MITライセンス
+- ソフトウェア FreeBSD (Unix系OS)
+
+---------
+
