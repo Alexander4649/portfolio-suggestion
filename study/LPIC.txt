@@ -76,15 +76,69 @@ lspci -v => 詳細表示 (-vv でさらに詳細も可能)
 ----------
 ◆システムの起動
 
+・BIOS(Basic Input Output System)が古い場合、HDDを正常に認識できず、小容量になる場合がある。=> BIOSをアップデートすることで問題が解決する
+- PC起動後、BIOSが起動、HDDの最低限の認識、起動デバイスの優先順位を決定
+- その後、優先順位に従い、各デバイスの先頭セクタのMBR(ブート用の特殊領域)を読込、得られたブートロダに制御を移す
+※ブートローダが得られない場合は、次のデバイスのMBRを読み込む
+- 起動デバイスの優先順位はBIOSセットアップ画面で変更可能
 
+・ブートローダ => 記憶装置内のカーネルをロードし、カーネルに生業を移す役割、LinuxシステムではGRUBが該当
+---ブートストラップローダ(446バイト)、第1〜4パーティション情報(16バイト)、ブートシグニチャ(2バイト) = 合計：512バイト = パーティションテーブル
 
+・カーネル => 起動後、ハードウェア認識・制御、ルートファイルシステムのマウントなどの初期化処理を行う
+カーネルイメージと初期RAMディスクは「/boot」に格納
 
+- ブートローダからカーネルに渡されたパラメータは「/proc/cmdline」ファイルで確認
 
+・init => 最初に起動するプロセス、PIDは1となる。
+=> SysVinitシステムは「/sbin/init」が起動
+- initプロセス設定ファイル「/etc/inittab」に基づき、アプリレベルの初期化
+- Upstart、systemd(初期化処理高速化)システムの場合は「etc/inittab」ファイルは使用されない
 
+・systemd => SysVinitを置き換える新しいinitの仕組み
+- systemd: systemdの本体となるプロセス、initの代わりに常駐
+- systemd-journald: systemdが制御する各サービスが出力ログ
+- systemd-logind: システムへログイン・起動停止・電源ボタン操作を管理
+- systemd-udevd: 従来のudevdに代わり、デバイスの動的変更・検出を行う
 
+・systemdで扱う処理はUnitという単位で管理
+- Unitは設定ファイル、設定通りにsystemdが処理実行
 
+・各Unitの拡張子と機能
+- devise: 各種デバイスを管理
+- mount: ファイルシステムのマウント管理
+- service: サービス制御
+- swap: スワップ領域を管理
+- target: 複数のサービスを一つのグループにする
+systemdでは「cgroups」というLinuxカーネルのキノにによってプロセスのリソース管理をしている
 
+systemdとUpstartはサービスを並列起動する,だから高速起動・停止可能
+システム起動時に実行されるUnitは「/etc/systemd/system/default.target」
 
+・SysVinitのランレベルとsystemdのターゲット
+- 0 : poweroff.target
+- 1 : rescue.target
+- 2,3,4 : multi-user.target
+- 5 : graphical.target
+- 6 : reboot.target
+これらターゲットは「lib/systemd/system」に格納
+
+・各サービスの稼働状況や起動設定を管理するsystemctlコマンド
+書式：　　systemctl サブコマンド [Unit名]
+- disable: サービスの自動起動を無効
+- enable: サービスの自動起動を有効
+- get-default: 次回起動時のターゲット表示
+- halt: システムを停止しhalt状態にする
+- is-active: サービスが稼働しているか表示
+- list-unit-files: 全てのUnit定義ファイルを一覧表示
+- reboot: システムを再起動
+- reload: サービス設定ファイル再読み込み
+- restart: サービスを再起動
+- set-default: 次回起動時のターゲットを設定
+- start: サービスを起動
+- status: サービスの状態を表示
+- stop: サービスを停止
+- poweroff: システムを停止し電源を切断
 
 
 
