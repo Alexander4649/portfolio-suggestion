@@ -270,7 +270,7 @@ GRUB2設定ファイル => 「/boot/grub/grub.cfg」 直接編集はしない
 
 ・APT(Advanced Package Tool)ツール => dpkgを拡張したツール群
 => 設定ファイルは「/etc/apt/sources.list」
-・APRツールコマンド
+・APTツールコマンド
 apt-get => インストール・アンインストール
 apt-cache => パッケージ情報の検索・参照
 apt => apt-get,apt-cacheの機能を統合

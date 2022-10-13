@@ -1,0 +1,7 @@
+dpkg --
+apt-get そのまま
+apt-cache そのまま
+rpm --
+yum そのまま
+zypper そのまま
+
