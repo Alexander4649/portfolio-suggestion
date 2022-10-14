@@ -5,3 +5,20 @@ rpm --
 yum そのまま
 zypper そのまま
 
+Linux (\r)除去
+od toxc(ﾄｯｸｽ)
+uniq 重複du
+tr 大up , als[n]um数
+wc cバイト
+cut -cカット
+
+tar gbz(zjJ)
+c create
+x 展開
+v 詳細
+f file
+
+c 残し
+xz --
+touch tam(トリリンガル)、(アクセス)、(mytimenow)
+dd コピー
