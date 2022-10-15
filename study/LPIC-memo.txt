@@ -22,3 +22,4 @@ c 残し
 xz --
 touch tam(トリリンガル)、(アクセス)、(mytimenow)
 dd コピー
+
