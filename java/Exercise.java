@@ -2,19 +2,19 @@
 
 // public class Exercise {
 // 	public static void main(String[] args) {
-// 	  for (int i = 0; i < 10; i++)
-// 	    System.out.println("SPAM");
+
 // 	}
 // }
 
 // 九九、三の段（ 3 ～ 27 の 3 の倍数）を表示するプログラムを作成しなさい。
 
-// public class Exercise {
-// 	public static void main(String[] args) {
-// 		for (int i = 1; i <= 9; i++)
-// 		System.out.println(3*i);
-// 	}
-// }
+public class Exercise {
+	public static void main(String[] args) {
+	  for (int i = 1; i <= 9; i++) {
+	    System.out.println(i*3);
+	  }
+	}
+}
 
 
 //2 の 1 乗から 8 乗までを計算し表示するプログラムを作成しなさい。
@@ -59,25 +59,25 @@
 // 			sum += value;
 // 		}
 // 		// System.out.println(total / 10);
-// 		System.out.println( "平均は" + ( sum / 10 ) );
+// 		System.out.println( "平均は" + ( sumの / 10 ) );
 
 // 	}
 // }
 
-import java.util.*;
+// import java.util.*;
 
-public class Exercise {
-	public static void main(String[] args) {
-BufferedReader br = new BufferedReader(
-                        new InputStreamReader( System.in ) );
-int sum = 0;
+// public class Exercise {
+// 	public static void main(String[] args) {
+// BufferedReader br = new BufferedReader(
+//                         new InputStreamReader( System.in ) );
+// int sum = 0;
 
-for( int i = 0 ; i < 10 ; i++ )
-{
-    int value = Integer.parseInt( br.readLine() );
-    sum += value;
-}
+// for( int i = 0 ; i < 10 ; i++ )
+// {
+//     int value = Integer.parseInt( br.readLine() );
+//     sum += value;
+// }
 
-System.out.println( "平均は" + ( sum / 10 ) );
-}
-}
+// System.out.println( "平均は" + ( sum / 10 ) );
+// }
+// }
